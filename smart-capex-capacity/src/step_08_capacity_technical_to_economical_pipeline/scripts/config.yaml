@@ -1,0 +1,19 @@
+display_name: "capacity-technical-to-economical-pipeline"
+pipeline_root: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/notebook_vertex_ai"
+package_path: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/templates/capacity-technical-to-economical-pipeline.json"
+project_id: "oro-smart-capex-001-dev"
+location: "europe-west3"
+service_account: "sa-oro-smart-capex-compute-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+base_image: "europe-west3-docker.pkg.dev/oro-smart-capex-001-dev/smart-capex-capacity/smartcapex-pipeline/smart-capex-capacity-pipeline-image:0.3.0"
+description: "Smart Capex: Capacity Technical to Economical Pipeline"
+
+traffic_weekly_kpis_table_id: "oro-smart-capex-001-dev.intermediate_results.data_preparation_oss_counter_agg_t"
+unit_price_table_id: "oro-smart-capex-001-dev.smart_capex_raw.unit_price"
+revenues_per_site_table_id: "oro-smart-capex-001-dev.intermediate_results.capacity_technical_to_economical_revenues_per_site_t"
+increase_of_arpu_by_the_upgrade_table_id: "oro-smart-capex-001-dev.intermediate_results.capacity_technical_to_economical_increase_of_arpu_by_the_upgrade_t"
+predicted_increase_in_traffic_by_the_upgrade_table_id: "oro-smart-capex-001-dev.intermediate_results.process_traffic_improvement_predicted_increase_in_traffic_by_the_upgrade_t"
+
+LAST_COMPLETE_YEAR_OF_OSS: 2023
+LAST_YEAR_OF_OSS: 2023
+OPEX_COMISSIONS_PERCENTAGE: 0.11
+TIME_TO_COMPUTE_NPV: 6

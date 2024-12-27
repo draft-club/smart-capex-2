@@ -1,0 +1,543 @@
+[ Thu, 10 Aug 2023 16:59:05 INFO     - _internal.py:224 -                 _log() ] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.129.244.216:5000
+[ Thu, 10 Aug 2023 16:59:05 INFO     - _internal.py:224 -                 _log() ] [33mPress CTRL+C to quit[0m
+[ Thu, 10 Aug 2023 16:59:22 INFO     - app.py:32 -             validate() ] Request POST /
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:43 -             __init__() ] Initialize Validation object - file_type: drift_dive - n_examples : 5
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:651 -        validate_data() ] Start validation 
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:66 -          load_schema() ] Load schema
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:539 - _validate_basic_constraints() ] validate basic constraints
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:541 - _validate_basic_constraints() ] Check unicity
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:543 - _validate_basic_constraints() ] Check join quality
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:545 - _validate_basic_constraints() ] Check dataset size drift
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:547 - _validate_basic_constraints() ] Check new features
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_date : Check presence
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_date : Check type
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_date : Check domain
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_date : Check drift
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_date : Check distinctness
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_date : Check pattern
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_date : Check outliers
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_date : Check highest frequency value
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_date : Check mapping
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_country : Check presence
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_country : Check type
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_country : Check domain
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_country : Check drift
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_country : Check distinctness
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_country : Check pattern
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_country : Check outliers
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_country : Check highest frequency value
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_country : Check mapping
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_bot_name : Check presence
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_bot_name : Check type
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_bot_name : Check domain
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_bot_name : Check drift
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_bot_name : Check distinctness
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_bot_name : Check pattern
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_bot_name : Check outliers
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_bot_name : Check highest frequency value
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_bot_name : Check mapping
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check presence
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check type
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check domain
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check drift
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check distinctness
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check pattern
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check outliers
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check highest frequency value
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check mapping
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check presence
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check type
+[ Thu, 10 Aug 2023 16:59:22 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check domain
+[ Thu, 10 Aug 2023 16:59:22 ERROR    - app.py:232 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 148, in validate
+    anomalies = validation_tool.validate_data(data_path=path, data_delimiter=delimiter)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 677, in validate_data
+    anomalies = self._validate_basic_constraints(data, schema, previous_data, dq_folder_path = 'dq_report/')
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 561, in _validate_basic_constraints
+    anomalies = self._check_domain(data = data, feature = feature, anomalies = anomalies, dq_folder_path = dq_folder_path)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 193, in _check_domain
+    pickle.dump(anomalous_values, open('%sanomalous_values.pkl'%(dq_folder_path),'wb'))
+FileNotFoundError: [Errno 2] No such file or directory: 'dq_report/anomalous_values.pkl'
+
+[ Thu, 10 Aug 2023 16:59:23 INFO     - _internal.py:224 -                 _log() ] 127.0.0.1 - - [10/Aug/2023 16:59:23] "[35m[1mPOST /validation HTTP/1.1[0m" 500 -
+[ Thu, 10 Aug 2023 17:00:36 INFO     - app.py:32 -             validate() ] Request POST /
+[ Thu, 10 Aug 2023 17:00:36 INFO     - validation.py:43 -             __init__() ] Initialize Validation object - file_type: oss_tuto - n_examples : 5
+[ Thu, 10 Aug 2023 17:00:36 INFO     - validation.py:66 -          load_schema() ] Load schema
+[ Thu, 10 Aug 2023 17:00:36 INFO     - validation.py:651 -        validate_data() ] Start validation 
+[ Thu, 10 Aug 2023 17:00:36 ERROR    - app.py:232 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 148, in validate
+    anomalies = validation_tool.validate_data(data_path=path, data_delimiter=delimiter)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 656, in validate_data
+    data = pd.read_csv(data_path, delimiter=data_delimiter)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\util\_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'train.csv'
+
+[ Thu, 10 Aug 2023 17:00:36 INFO     - app.py:235 -             validate() ] Push to db
+[ Thu, 10 Aug 2023 17:00:36 ERROR    - app.py:249 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 148, in validate
+    anomalies = validation_tool.validate_data(data_path=path, data_delimiter=delimiter)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 656, in validate_data
+    data = pd.read_csv(data_path, delimiter=data_delimiter)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\util\_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\parsers\readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\pandas\io\common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'train.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 242, in validate
+    con=supervision_engine,
+UnboundLocalError: local variable 'supervision_engine' referenced before assignment
+
+[ Thu, 10 Aug 2023 17:00:36 ERROR    - app.py:250 -             validate() ] can't save to supervision table
+[ Thu, 10 Aug 2023 17:00:36 INFO     - _internal.py:224 -                 _log() ] 127.0.0.1 - - [10/Aug/2023 17:00:36] "[35m[1mPOST /validation HTTP/1.1[0m" 500 -
+[ Thu, 10 Aug 2023 17:01:17 INFO     - app.py:32 -             validate() ] Request POST /
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:43 -             __init__() ] Initialize Validation object - file_type: drift_dive - n_examples : 5
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:651 -        validate_data() ] Start validation 
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:66 -          load_schema() ] Load schema
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:539 - _validate_basic_constraints() ] validate basic constraints
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:541 - _validate_basic_constraints() ] Check unicity
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:543 - _validate_basic_constraints() ] Check join quality
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:545 - _validate_basic_constraints() ] Check dataset size drift
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:547 - _validate_basic_constraints() ] Check new features
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_date : Check presence
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_date : Check type
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_date : Check domain
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_date : Check drift
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_date : Check distinctness
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_date : Check pattern
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_date : Check outliers
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_date : Check highest frequency value
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_date : Check mapping
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_country : Check presence
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_country : Check type
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_country : Check domain
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_country : Check drift
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_country : Check distinctness
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_country : Check pattern
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_country : Check outliers
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_country : Check highest frequency value
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_country : Check mapping
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_bot_name : Check presence
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_bot_name : Check type
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_bot_name : Check domain
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_bot_name : Check drift
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_bot_name : Check distinctness
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_bot_name : Check pattern
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_bot_name : Check outliers
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_bot_name : Check highest frequency value
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_bot_name : Check mapping
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check presence
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check type
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check domain
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check drift
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check distinctness
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check pattern
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check outliers
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check highest frequency value
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check mapping
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check presence
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check type
+[ Thu, 10 Aug 2023 17:01:17 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check domain
+[ Thu, 10 Aug 2023 17:01:17 ERROR    - app.py:232 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 148, in validate
+    anomalies = validation_tool.validate_data(data_path=path, data_delimiter=delimiter)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 677, in validate_data
+    anomalies = self._validate_basic_constraints(data, schema, previous_data, dq_folder_path = 'dq_report/')
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 561, in _validate_basic_constraints
+    anomalies = self._check_domain(data = data, feature = feature, anomalies = anomalies, dq_folder_path = dq_folder_path)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 193, in _check_domain
+    pickle.dump(anomalous_values, open('%sanomalous_values.pkl'%(dq_folder_path),'wb'))
+FileNotFoundError: [Errno 2] No such file or directory: 'dq_report/anomalous_values.pkl'
+
+[ Thu, 10 Aug 2023 17:01:17 INFO     - _internal.py:224 -                 _log() ] 127.0.0.1 - - [10/Aug/2023 17:01:17] "[35m[1mPOST /validation HTTP/1.1[0m" 500 -
+[ Thu, 10 Aug 2023 17:05:04 INFO     - _internal.py:224 -                 _log() ] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.129.244.216:5000
+[ Thu, 10 Aug 2023 17:05:04 INFO     - _internal.py:224 -                 _log() ] [33mPress CTRL+C to quit[0m
+[ Thu, 10 Aug 2023 17:05:08 INFO     - app.py:34 -             validate() ] Request POST /
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:43 -             __init__() ] Initialize Validation object - file_type: drift_dive - n_examples : 5
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:651 -        validate_data() ] Start validation 
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:66 -          load_schema() ] Load schema
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:539 - _validate_basic_constraints() ] validate basic constraints
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:541 - _validate_basic_constraints() ] Check unicity
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:543 - _validate_basic_constraints() ] Check join quality
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:545 - _validate_basic_constraints() ] Check dataset size drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:547 - _validate_basic_constraints() ] Check new features
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_date : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_date : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_date : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_date : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_date : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_date : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_date : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_date : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_date : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_country : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_country : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_country : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_country : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_country : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_country : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_country : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_country : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_country : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature df_bot_name : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature df_bot_name : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature df_bot_name : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature df_bot_name : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature df_bot_name : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature df_bot_name : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature df_bot_name : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature df_bot_name : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature df_bot_name : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature ctxt.bot_id : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature resp.nlu_intent_name : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature resp.understood_nlu : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature resp.understood : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature resp.understood : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature resp.understood : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature resp.understood : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature resp.understood : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature resp.understood : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature resp.understood : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature resp.understood : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature resp.understood : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature resp.input_type : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature resp.input_type : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature resp.input_type : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature resp.input_type : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature resp.input_type : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature resp.input_type : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature resp.input_type : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature resp.input_type : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature resp.input_type : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature ctxt.country : Check presence
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature ctxt.country : Check type
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature ctxt.country : Check domain
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature ctxt.country : Check drift
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature ctxt.country : Check distinctness
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature ctxt.country : Check pattern
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature ctxt.country : Check outliers
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature ctxt.country : Check highest frequency value
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature ctxt.country : Check mapping
+[ Thu, 10 Aug 2023 17:05:08 INFO     - validation.py:704 - get_anomalies_examples() ] Get anomalies examples
+[ Thu, 10 Aug 2023 17:05:09 INFO     - validation.py:738 - get_anomalies_examples() ] Return final anomaly report + examples
+[ Thu, 10 Aug 2023 17:05:09 INFO     - app.py:231 -             validate() ] Process finished
+[ Thu, 10 Aug 2023 17:05:09 INFO     - _internal.py:224 -                 _log() ] 127.0.0.1 - - [10/Aug/2023 17:05:09] "POST /validation HTTP/1.1" 200 -
+[ Thu, 10 Aug 2023 17:05:36 INFO     - app.py:34 -             validate() ] Request POST /
+[ Thu, 10 Aug 2023 17:05:36 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:05:36 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:05:55 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:05:55 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:05:58 DEBUG    - retry.py:351 -             from_int() ] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[ Thu, 10 Aug 2023 17:05:58 DEBUG    - requests.py:192 -             __call__() ] Making request: POST https://oauth2.googleapis.com/token
+[ Thu, 10 Aug 2023 17:05:58 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[ Thu, 10 Aug 2023 17:05:59 DEBUG    - connectionpool.py:456 -        _make_request() ] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[ Thu, 10 Aug 2023 17:05:59 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): storage.googleapis.com:443
+[ Thu, 10 Aug 2023 17:06:00 DEBUG    - connectionpool.py:456 -        _make_request() ] https://storage.googleapis.com:443 "GET /storage/v1/b/ocdvt-data-bucket?projection=noAcl&prettyPrint=false HTTP/1.1" 404 171
+[ Thu, 10 Aug 2023 17:06:00 ERROR    - app.py:235 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 57, in validate
+    data = json.loads(client.get_bucket(bucket_name).blob(r'schema/type_class_map.json').download_as_string())
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 780, in get_bucket
+    bucket.reload(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\bucket.py", line 1077, in reload
+    super(Bucket, self).reload(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\_helpers.py", line 246, in reload
+    api_response = client._get_resource(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 385, in _get_resource
+    return self._connection.api_request(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\_http.py", line 72, in api_request
+    return call()
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\api_core\retry.py", line 349, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\api_core\retry.py", line 191, in retry_target
+    return target()
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\_http\__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.NotFound: 404 GET https://storage.googleapis.com/storage/v1/b/ocdvt-data-bucket?projection=noAcl&prettyPrint=false: The specified bucket does not exist.
+
+[ Thu, 10 Aug 2023 17:06:00 INFO     - app.py:238 -             validate() ] Push to db
+[ Thu, 10 Aug 2023 17:06:00 ERROR    - app.py:252 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 57, in validate
+    data = json.loads(client.get_bucket(bucket_name).blob(r'schema/type_class_map.json').download_as_string())
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 780, in get_bucket
+    bucket.reload(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\bucket.py", line 1077, in reload
+    super(Bucket, self).reload(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\_helpers.py", line 246, in reload
+    api_response = client._get_resource(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 385, in _get_resource
+    return self._connection.api_request(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\_http.py", line 72, in api_request
+    return call()
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\api_core\retry.py", line 349, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\api_core\retry.py", line 191, in retry_target
+    return target()
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\_http\__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.NotFound: 404 GET https://storage.googleapis.com/storage/v1/b/ocdvt-data-bucket?projection=noAcl&prettyPrint=false: The specified bucket does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 245, in validate
+    con=supervision_engine,
+UnboundLocalError: local variable 'supervision_engine' referenced before assignment
+
+[ Thu, 10 Aug 2023 17:06:00 ERROR    - app.py:253 -             validate() ] can't save to supervision table
+[ Thu, 10 Aug 2023 17:06:00 INFO     - _internal.py:224 -                 _log() ] 127.0.0.1 - - [10/Aug/2023 17:06:00] "[35m[1mPOST /validation HTTP/1.1[0m" 500 -
+[ Thu, 10 Aug 2023 17:07:12 INFO     - app.py:34 -             validate() ] Request POST /
+[ Thu, 10 Aug 2023 17:07:12 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:07:12 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:07:15 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:07:15 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:07:18 DEBUG    - retry.py:351 -             from_int() ] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[ Thu, 10 Aug 2023 17:07:18 DEBUG    - requests.py:192 -             __call__() ] Making request: POST https://oauth2.googleapis.com/token
+[ Thu, 10 Aug 2023 17:07:18 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[ Thu, 10 Aug 2023 17:07:18 DEBUG    - connectionpool.py:456 -        _make_request() ] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[ Thu, 10 Aug 2023 17:07:18 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): storage.googleapis.com:443
+[ Thu, 10 Aug 2023 17:07:19 DEBUG    - connectionpool.py:456 -        _make_request() ] https://storage.googleapis.com:443 "GET /storage/v1/b/ocdvt-data-bucket?projection=noAcl&prettyPrint=false HTTP/1.1" 200 585
+[ Thu, 10 Aug 2023 17:07:19 DEBUG    - connectionpool.py:456 -        _make_request() ] https://storage.googleapis.com:443 "GET /download/storage/v1/b/ocdvt-data-bucket/o/schema%2Ftype_class_map.json?alt=media HTTP/1.1" 404 60
+[ Thu, 10 Aug 2023 17:07:19 ERROR    - app.py:235 -             validate() ] Traceback (most recent call last):
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 1099, in download_blob_to_file
+    blob_or_uri._do_download(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 984, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\requests\download.py", line 237, in consume
+    return _request_helpers.wait_and_retry(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\requests\_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\requests\download.py", line 219, in retriable_request
+    self._process_response(result)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\_download.py", line 188, in _process_response
+    _helpers.require_status_code(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\_helpers.py", line 108, in require_status_code
+    raise common.InvalidResponse(
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 57, in validate
+    data = json.loads(client.get_bucket(bucket_name).blob(r'schema/type_class_map.json').download_as_string())
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 1502, in download_as_string
+    return self.download_as_bytes(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 1387, in download_as_bytes
+    client.download_blob_to_file(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 1112, in download_blob_to_file
+    _raise_from_invalid_response(exc)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 4373, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.NotFound: 404 GET https://storage.googleapis.com/download/storage/v1/b/ocdvt-data-bucket/o/schema%2Ftype_class_map.json?alt=media: No such object: ocdvt-data-bucket/schema/type_class_map.json: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+[ Thu, 10 Aug 2023 17:07:19 INFO     - app.py:238 -             validate() ] Push to db
+[ Thu, 10 Aug 2023 17:07:19 ERROR    - app.py:252 -             validate() ] Traceback (most recent call last):
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 1099, in download_blob_to_file
+    blob_or_uri._do_download(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 984, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\requests\download.py", line 237, in consume
+    return _request_helpers.wait_and_retry(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\requests\_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\requests\download.py", line 219, in retriable_request
+    self._process_response(result)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\_download.py", line 188, in _process_response
+    _helpers.require_status_code(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\resumable_media\_helpers.py", line 108, in require_status_code
+    raise common.InvalidResponse(
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 57, in validate
+    data = json.loads(client.get_bucket(bucket_name).blob(r'schema/type_class_map.json').download_as_string())
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 1502, in download_as_string
+    return self.download_as_bytes(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 1387, in download_as_bytes
+    client.download_blob_to_file(
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\client.py", line 1112, in download_blob_to_file
+    _raise_from_invalid_response(exc)
+  File "C:\Users\YKXW7880\mambaforge\envs\dvt\lib\site-packages\google\cloud\storage\blob.py", line 4373, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.NotFound: 404 GET https://storage.googleapis.com/download/storage/v1/b/ocdvt-data-bucket/o/schema%2Ftype_class_map.json?alt=media: No such object: ocdvt-data-bucket/schema/type_class_map.json: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 245, in validate
+    con=supervision_engine,
+UnboundLocalError: local variable 'supervision_engine' referenced before assignment
+
+[ Thu, 10 Aug 2023 17:07:19 ERROR    - app.py:253 -             validate() ] can't save to supervision table
+[ Thu, 10 Aug 2023 17:07:19 INFO     - _internal.py:224 -                 _log() ] 127.0.0.1 - - [10/Aug/2023 17:07:19] "[35m[1mPOST /validation HTTP/1.1[0m" 500 -
+[ Thu, 10 Aug 2023 17:08:12 INFO     - app.py:34 -             validate() ] Request POST /
+[ Thu, 10 Aug 2023 17:08:12 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:12 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:15 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:15 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:17 DEBUG    - retry.py:351 -             from_int() ] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[ Thu, 10 Aug 2023 17:08:17 DEBUG    - requests.py:192 -             __call__() ] Making request: POST https://oauth2.googleapis.com/token
+[ Thu, 10 Aug 2023 17:08:17 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[ Thu, 10 Aug 2023 17:08:18 DEBUG    - connectionpool.py:456 -        _make_request() ] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[ Thu, 10 Aug 2023 17:08:18 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): storage.googleapis.com:443
+[ Thu, 10 Aug 2023 17:08:20 DEBUG    - connectionpool.py:456 -        _make_request() ] https://storage.googleapis.com:443 "GET /storage/v1/b/bucket-ocdvt?projection=noAcl&prettyPrint=false HTTP/1.1" 200 570
+[ Thu, 10 Aug 2023 17:08:20 DEBUG    - connectionpool.py:456 -        _make_request() ] https://storage.googleapis.com:443 "GET /download/storage/v1/b/bucket-ocdvt/o/schema%2Ftype_class_map.json?alt=media HTTP/1.1" 200 657
+[ Thu, 10 Aug 2023 17:08:20 DEBUG    - connectionpool.py:456 -        _make_request() ] https://storage.googleapis.com:443 "GET /storage/v1/b/bucket-ocdvt?projection=noAcl&prettyPrint=false HTTP/1.1" 200 570
+[ Thu, 10 Aug 2023 17:08:20 DEBUG    - connectionpool.py:456 -        _make_request() ] https://storage.googleapis.com:443 "GET /download/storage/v1/b/bucket-ocdvt/o/schema%2Ftitanic%2Ftitanic_schema.json?alt=media HTTP/1.1" 200 4946
+[ Thu, 10 Aug 2023 17:08:20 INFO     - validation.py:43 -             __init__() ] Initialize Validation object - file_type: titanic - n_examples : 5
+[ Thu, 10 Aug 2023 17:08:20 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:20 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:23 DEBUG    - _default.py:213 - _get_explicit_environ_credentials() ] Checking None for explicit credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:23 DEBUG    - _default.py:186 - _get_gcloud_sdk_credentials() ] Checking Cloud SDK credentials as part of auth process...
+[ Thu, 10 Aug 2023 17:08:25 DEBUG    - opentelemetry_tracing.py:66 -          create_span() ] This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+[ Thu, 10 Aug 2023 17:08:25 DEBUG    - retry.py:351 -             from_int() ] Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+[ Thu, 10 Aug 2023 17:08:25 DEBUG    - requests.py:192 -             __call__() ] Making request: POST https://oauth2.googleapis.com/token
+[ Thu, 10 Aug 2023 17:08:25 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[ Thu, 10 Aug 2023 17:08:26 DEBUG    - connectionpool.py:456 -        _make_request() ] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[ Thu, 10 Aug 2023 17:08:26 DEBUG    - connectionpool.py:1003 -            _new_conn() ] Starting new HTTPS connection (1): bigquery.googleapis.com:443
+[ Thu, 10 Aug 2023 17:08:27 DEBUG    - connectionpool.py:456 -        _make_request() ] https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/ino-dataai-data2-gov2-2021-sbx/jobs?prettyPrint=false HTTP/1.1" 200 None
+[ Thu, 10 Aug 2023 17:08:28 DEBUG    - connectionpool.py:456 -        _make_request() ] https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/ino-dataai-data2-gov2-2021-sbx/queries/a8437697-0312-434b-856a-4da01938f24b?maxResults=0&location=europe-west1&prettyPrint=false HTTP/1.1" 200 None
+[ Thu, 10 Aug 2023 17:08:28 DEBUG    - connectionpool.py:456 -        _make_request() ] https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/ino-dataai-data2-gov2-2021-sbx/queries/a8437697-0312-434b-856a-4da01938f24b?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=europe-west1&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:651 -        validate_data() ] Start validation 
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:66 -          load_schema() ] Load schema
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:539 - _validate_basic_constraints() ] validate basic constraints
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:541 - _validate_basic_constraints() ] Check unicity
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:543 - _validate_basic_constraints() ] Check join quality
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:545 - _validate_basic_constraints() ] Check dataset size drift
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:547 - _validate_basic_constraints() ] Check new features
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature PassengerId : Check presence
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature PassengerId : Check type
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature PassengerId : Check domain
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature PassengerId : Check drift
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature PassengerId : Check distinctness
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature PassengerId : Check pattern
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature PassengerId : Check outliers
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature PassengerId : Check highest frequency value
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature PassengerId : Check mapping
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature Survived : Check presence
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature Survived : Check type
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature Survived : Check domain
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature Survived : Check drift
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature Survived : Check distinctness
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature Survived : Check pattern
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature Survived : Check outliers
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature Survived : Check highest frequency value
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature Survived : Check mapping
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature Pclass : Check presence
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature Pclass : Check type
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature Pclass : Check domain
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature Pclass : Check drift
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature Pclass : Check distinctness
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature Pclass : Check pattern
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature Pclass : Check outliers
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature Pclass : Check highest frequency value
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature Pclass : Check mapping
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature Name : Check presence
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature Name : Check type
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature Name : Check domain
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:563 - _validate_basic_constraints() ] Feature Name : Check drift
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:566 - _validate_basic_constraints() ] Feature Name : Check distinctness
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:569 - _validate_basic_constraints() ] Feature Name : Check pattern
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:572 - _validate_basic_constraints() ] Feature Name : Check outliers
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:575 - _validate_basic_constraints() ] Feature Name : Check highest frequency value
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:578 - _validate_basic_constraints() ] Feature Name : Check mapping
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:550 - _validate_basic_constraints() ] Feature Sex : Check presence
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:557 - _validate_basic_constraints() ] Feature Sex : Check type
+[ Thu, 10 Aug 2023 17:08:28 INFO     - validation.py:560 - _validate_basic_constraints() ] Feature Sex : Check domain
+[ Thu, 10 Aug 2023 17:08:28 ERROR    - app.py:235 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 96, in validate
+    anomalies = validation_tool.validate_data(data = data, data_delimiter = delimiter)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 677, in validate_data
+    anomalies = self._validate_basic_constraints(data, schema, previous_data, dq_folder_path = 'dq_report/')
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 561, in _validate_basic_constraints
+    anomalies = self._check_domain(data = data, feature = feature, anomalies = anomalies, dq_folder_path = dq_folder_path)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 196, in _check_domain
+    update_intent(new_intents = anomalous_values, file_type = self.file_type, dq_folder_path = dq_folder_path)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 31, in update_intent
+    schema = schema_tools.set_domain(schema, 'resp.nlu_intent_name', intents)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\schema_tools.py", line 670, in set_domain
+    raise ValueError('{} feature is not in the schema'.format(feature_name))
+ValueError: resp.nlu_intent_name feature is not in the schema
+
+[ Thu, 10 Aug 2023 17:08:28 INFO     - app.py:238 -             validate() ] Push to db
+[ Thu, 10 Aug 2023 17:08:28 ERROR    - app.py:252 -             validate() ] Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 96, in validate
+    anomalies = validation_tool.validate_data(data = data, data_delimiter = delimiter)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 677, in validate_data
+    anomalies = self._validate_basic_constraints(data, schema, previous_data, dq_folder_path = 'dq_report/')
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 561, in _validate_basic_constraints
+    anomalies = self._check_domain(data = data, feature = feature, anomalies = anomalies, dq_folder_path = dq_folder_path)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 196, in _check_domain
+    update_intent(new_intents = anomalous_values, file_type = self.file_type, dq_folder_path = dq_folder_path)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\validation.py", line 31, in update_intent
+    schema = schema_tools.set_domain(schema, 'resp.nlu_intent_name', intents)
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\src\schema_tools.py", line 670, in set_domain
+    raise ValueError('{} feature is not in the schema'.format(feature_name))
+ValueError: resp.nlu_intent_name feature is not in the schema
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\YKXW7880\WORK\gitlab\ocdvt\app.py", line 245, in validate
+    con=supervision_engine,
+UnboundLocalError: local variable 'supervision_engine' referenced before assignment
+
+[ Thu, 10 Aug 2023 17:08:28 ERROR    - app.py:253 -             validate() ] can't save to supervision table
+[ Thu, 10 Aug 2023 17:08:28 INFO     - _internal.py:224 -                 _log() ] 127.0.0.1 - - [10/Aug/2023 17:08:28] "[35m[1mPOST /validation HTTP/1.1[0m" 500 -

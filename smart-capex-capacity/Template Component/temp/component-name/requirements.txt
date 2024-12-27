@@ -1,0 +1,10 @@
+
+pandas
+pystan==2.19.1.1
+holidays==0.24
+prophet==1.1.1
+pandas-gbq
+google-cloud-bigquery
+pyarrow
+scipy
+tqdm

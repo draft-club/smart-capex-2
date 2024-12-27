@@ -1,0 +1,27 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+        exclude: 'functional_documentation/SmartCAPEX OMA_Densification_functional_documentation_v0.4.pptx'
+    -   id: check-docstring-first
+    -   id: detect-private-key
+    -   id: name-tests-test
+        args: [-h]
+        #args: [--pytest-test-first]
+#    -   id: autopep8
+
+
+- repo: local
+  hooks:
+      - id: delete-files
+        name: Delete specified files before commit
+        entry: python config/delete_files.py
+        language: system
+        types: [ file ]
+        pass_filenames: true

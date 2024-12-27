@@ -1,0 +1,13 @@
+- data_preparation_request:
+        call: http.post
+        args:
+            url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/data_preparation_pipeline
+            auth:
+              type: OIDC
+            timeout: 900
+- traffic_forecasting_request:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/traffic_forecasting_pipeline
+        auth:
+            type: OIDC

@@ -1,0 +1,21 @@
+display_name: "preprocess-technical-pipeline"
+pipeline_root: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/notebook_vertex_ai"
+package_path: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/templates/preprocess-technical-pipeline.json"
+project_id: "oro-smart-capex-001-dev"
+location: "europe-west3"
+service_account: "sa-oro-smart-capex-compute-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+base_image: "europe-west3-docker.pkg.dev/oro-smart-capex-001-dev/smart-capex-capacity/smartcapex-pipeline/smart-capex-capacity-pipeline-image:0.3.0"
+
+
+processed_sites_table_id: "oro-smart-capex-001-dev.intermediate_results.data_preparation_sites_region_t"
+processed_oss_counter_table_id: "oro-smart-capex-001-dev.intermediate_results.data_preparation_oss_counter_agg_t"
+
+cell_affected_table_id: "oro-smart-capex-001-dev.intermediate_results.preprocess_technical_cell_affected_t"
+sites_to_remove_table_id: "oro-smart-capex-001-dev.intermediate_results.preprocess_technical_sites_to_remove_t"
+list_of_upgrades_table_id: "oro-smart-capex-001-dev.intermediate_results.preprocess_technical_list_of_upgrades_t"
+
+
+TRAFFIC_IMPROVEMENT:
+  MAX_NUMBER_OF_NEIGHBORS: 0
+  WEEKS_TO_WAIT_AFTER_UPGRADE: 8
+  MAXIMUM_WEEKS_TO_GROUP_UPGRADES: 4

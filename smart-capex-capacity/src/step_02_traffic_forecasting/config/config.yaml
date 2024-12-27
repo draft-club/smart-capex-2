@@ -1,0 +1,31 @@
+display_name: "traffic-forecasting-pipeline"
+pipeline_root: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/notebook_vertex_ai"
+package_path: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/templates/traffic-forecasting-pipeline.json"
+project_id: "oro-smart-capex-001-dev"
+location: "europe-west3"
+service_account: "sa-oro-smart-capex-compute-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+base_image: "europe-west3-docker.pkg.dev/oro-smart-capex-001-dev/smart-capex-capacity/smartcapex-pipeline/smart-capex-capacity-pipeline-image:0.3.0"
+
+processed_oss_counter_table_id: "oro-smart-capex-001-dev.intermediate_results.data_preparation_oss_counter_agg_t"
+predicted_traffic_kpis_table_id: "oro-smart-capex-001-dev.intermediate_results.traffic_forecasting_predicted_traffic_kpis_t"
+
+TRAFFIC_KPI:
+    TRAFFIC_3G:
+        - total_voice_traffic_kerlands
+        - total_data_traffic_dl_gb
+        - average_number_of_users_in_queue
+        - average_throughput_user_dl
+        
+    TRAFFIC_4G:
+        - total_data_traffic_dl_gb
+        - average_number_of_users_in_queue
+        - average_throughput_user_dl    
+
+TRAFFIC_FORECASTING:
+    INTERQUARTILE_COEFF: 3
+    _CROSS_VALIDATION: False
+    _TRAIN_TEST_SPLIT: False
+    _TRAINING_RATIO: 0.75
+    MAX_DATE_TO_PREDICT: 52
+    EXEC_TIME: "20210409_102316"
+    COUNTRY_NAME: 'RO'

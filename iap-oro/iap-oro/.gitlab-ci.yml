@@ -1,0 +1,55 @@
+image:
+   name: hashicorp/terraform:light
+   entrypoint:
+     - '/usr/bin/env'
+     - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+before_script:
+     -  rm -rf .terraform
+     -  terraform --version
+     -  mkdir -p ./creds
+     -  echo $SERVICEACCOUNT | base64 -d > ./creds/serviceaccount.json
+     -  terraform init
+
+stages:
+      #- validate
+      - import 
+      - plan
+      - apply
+
+#validate:
+#   stage: validate
+#   script:
+#     - terraform validate
+import:
+   stage: import
+   script:
+     - terraform import google_vpc_access_connector.existing_connector projects/oro-network-shared-054-prd/locations/europe-west3/connectors/vpc-connector
+   #dependencies:
+   #  - plan
+
+plan:
+   stage: plan
+   script:
+     - terraform plan -out "planfile"
+   #dependencies:
+     #- validate
+   artifacts:
+     paths:
+       - planfile
+
+
+      
+
+apply:
+   stage: apply
+   script:
+     - terraform apply -input=false "planfile"
+   dependencies:
+     #- import
+     - plan 
+
+
+
+     
+   when: manual

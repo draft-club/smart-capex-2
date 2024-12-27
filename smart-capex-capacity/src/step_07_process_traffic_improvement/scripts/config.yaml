@@ -1,0 +1,68 @@
+project_id: "oro-smart-capex-001-dev"
+location: "europe-west3"
+
+pipeline_root: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/notebook_vertex_ai"
+
+display_name: "process-traffic-improvement-pipeline"
+description: "Smart Capex: Process Traffic Improvement"
+
+base_image: "europe-west3-docker.pkg.dev/oro-smart-capex-001-dev/smart-capex-capacity/smartcapex-pipeline/smart-capex-capacity-pipeline-image:0.3.0"
+
+package_path: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/templates/process-traffic-improvement-pipeline.json"
+service_account: "sa-oro-smart-capex-compute-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+
+gcs_bucket: "oro-smart-capex-state-iac-934643879169-dev"
+xgboost_data_model_path: "oro-smart-capex-001-dev/models/traffic_improvement_model/20210409_102316/data_traffic_improvement_xgboost.sav"
+xgboost_voice_model_path: "oro-smart-capex-001-dev/models/traffic_improvement_model/20210409_102316/voice_traffic_improvement_xgboost.sav"
+
+trend_data_models_path: "oro-smart-capex-001-dev/models/trend_model/traffic_trend_by_site_region/total_data_traffic_dl_gb/20210409_102316"
+trend_voice_models_path: "oro-smart-capex-001-dev/models/trend_model/traffic_trend_by_site_region/total_voice_traffic_kerlands/20210409_102316"
+
+sites_table_id: "oro-smart-capex-001-dev.intermediate_results.data_preparation_sites_region_t"
+predicted_traffic_kpis_table_id: "oro-smart-capex-001-dev.intermediate_results.traffic_forecasting_predicted_traffic_kpis_t"
+selected_band_per_site_table_id: "oro-smart-capex-001-dev.intermediate_results.process_bands_to_upgrade_selected_band_per_site_t"
+data_traffic_improvement_features_table_id: "oro-smart-capex-001-dev.intermediate_results.get_all_traffic_improvement_data_traffic_features_for_prediction_t"
+voice_traffic_improvement_features_table_id: "oro-smart-capex-001-dev.intermediate_results.get_all_traffic_improvement_voice_traffic_features_for_prediction_t"
+predicted_increase_in_traffic_by_the_upgrade_table_id: "oro-smart-capex-001-dev.intermediate_results.process_traffic_improvement_predicted_increase_in_traffic_by_the_upgrade_t"
+
+cell_affected_table_id: "oro-smart-capex-001-dev.intermediate_results.preprocess_technical_cell_affected_t"
+sites_to_remove_table_id: "oro-smart-capex-001-dev.intermediate_results.preprocess_technical_sites_to_remove_t"
+list_of_upgrades_table_id: "oro-smart-capex-001-dev.intermediate_results.preprocess_technical_list_of_upgrades_t"
+
+data_traffic_features_table_id: "oro-smart-capex-001-dev.intermediate_results.get_all_traffic_improvement_data_traffic_features"
+voice_traffic_features_table_id: "oro-smart-capex-001-dev.intermediate_results.get_all_traffic_improvement_voice_traffic_features"
+
+variable_to_group_by: "site_region"
+data_kpi_to_compute_effect: "total_data_traffic_dl_gb"
+voice_kpi_to_compute_effect: "total_voice_traffic_kerlands"
+data_kpi_to_compute_trend: "total_data_traffic_dl_gb"
+voice_kpi_to_compute_trend: "total_voice_traffic_kerlands"
+
+TRAFFIC_IMPROVEMENT:
+  MAX_NUMBER_OF_NEIGHBORS: 0
+  WEEKS_TO_WAIT_AFTER_UPGRADE: 8
+  WEEKS_TO_WAIT_AFTER_UPGRADE_MAX: 12
+  BANDS_TO_CONSIDER:
+    - U900
+    - U2100
+    - L800
+    - L1800
+    - L2600
+  DATA_TRAFFIC_FEATURES:
+    - total_data_traffic_dl_gb_max
+    - total_data_traffic_dl_gb_mean
+    - total_data_traffic_dl_gb_median
+    - total_data_traffic_dl_gb_min
+  VOICE_TRAFFIC_FEATURES:
+    - total_voice_traffic_kerlands_max
+    - total_voice_traffic_kerlands_mean
+    - total_voice_traffic_kerlands_median
+    - total_voice_traffic_kerlands_min
+    
+TRAFFIC_IMPROVEMENT_TREND:
+  MAX_YEARLY_INCREMENT: 50
+  MAX_WEEKS_TO_PREDICT: 260
+  MAX_WEEKS_TO_CONSIDER_INCREASE: 104
+  MIN_WEEKS_TO_CONSIDER_INCREASE: 52
+  WEEKS_TO_WAIT_AFTER_UPGRADE: 8
+

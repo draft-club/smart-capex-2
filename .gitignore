@@ -1,0 +1,7 @@
+**/__pycache__
+**/.ipynb*
+**/.idea
+config/*_schema.json
+*.json
+*.pkl
+*.csv

@@ -1,0 +1,24 @@
+from pathlib import Path
+import yaml
+
+
+def load_config(path: Path) -> dict:
+    """
+    Load a configuration file from the specified path and returns the
+    configuration as a dictionary.
+
+    Args:
+    path (Path): The path to the configuration file.
+
+    Returns:
+    dict: A dictionary containing the configuration data.
+    """
+    with open(path, 'r') as f:
+        configs = yaml.safe_load(f)
+    return configs
+
+# configuration file path
+config_path = Path('config/config.yaml').resolve()
+
+# load pipeline configuration
+pipeline_config = load_config(config_path)

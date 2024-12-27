@@ -1,0 +1,13 @@
+
+pandas
+pystan==2.19.1.1
+holidays==0.24
+prophet==1.1.1
+pandas-gbq
+google-cloud-bigquery
+pyarrow==0.13.0
+scipy
+tqdm
+haversine==2.3.0
+scikit-learn==0.24.1
+sqlalchemy==1.4.2

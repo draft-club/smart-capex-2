@@ -1,0 +1,48 @@
+image: docker:latest
+
+variables:
+  GCP_SERVICE_ACCOUNT: "sa-oro-data-cicd-capex-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+  GCP_WORKLOAD_IDENTITY_PROVIDER: "projects/934643879169/locations/global/workloadIdentityPools/orange-pool/providers/gitlab-tech-orange"
+  REGION: "europe-west3"
+  PROJECT: "oro-smart-capex-001-dev"
+
+stages:
+  - deploy
+
+before_script:
+  # Ensure shell scripts are executable
+  - chmod +x ./sh_docker_build.sh
+  - chmod +x ./sh_push_artifactory.sh
+
+deploy-dev:
+  image: google/cloud-sdk:slim
+  stage: deploy
+  variables:
+    CLOUDSDK_CONFIG: $CI_PROJECT_DIR/gcloud
+  script:
+    # Set the Google Cloud project
+    - gcloud config set project $PROJECT
+
+    # Write the CI_JOB_JWT token to a file
+    - echo ${CI_JOB_JWT_V2} > .ci_job_jwt_file
+
+    # Create a workload identity credential config for authentication
+    - gcloud iam workload-identity-pools create-cred-config "${GCP_WORKLOAD_IDENTITY_PROVIDER}" --service-account="${GCP_SERVICE_ACCOUNT}" --output-file=.gcp_temp_cred.json --credential-source-file=.ci_job_jwt_file
+
+
+    # Authenticate using the temporary credentials
+    - gcloud auth login --cred-file=.gcp_temp_cred.json
+
+    # List the active authenticated accounts for verification
+    - gcloud auth list
+
+    # Submit the build to Google Cloud Build
+    - gcloud builds submit --config=cloudbuild.yaml --region=$REGION --default-buckets-behavior=regional-user-owned-bucket
+
+  # Specify artifacts to store for later use, like the JWT and credential files
+  artifacts:
+    paths:
+      - .ci_job_jwt_file
+      - .gcp_temp_cred.json
+      - gcloud/config.json
+    expire_in: 1 day

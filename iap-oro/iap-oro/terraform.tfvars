@@ -1,0 +1,5 @@
+#project_id        = "oro-smart-capex-001-dev"
+domain            = "smartcapex.orange.ro"
+lb_name           = "lbsmartcapexwebapp"
+iap_client_id     = ""
+iap_client_secret = ""

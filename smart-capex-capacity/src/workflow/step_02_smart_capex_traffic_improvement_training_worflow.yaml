@@ -1,0 +1,20 @@
+- process_bands_to_upgrade_request:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/process_bands_to_upgrade_pipeline
+        auth:
+            type: OIDC
+        timeout: 1800
+- preprocess_technical_pipeline_request:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/preprocess_technical_pipeline
+        auth:
+            type: OIDC
+        timeout: 1800
+- get_all_traffic_improvement_training_pipeline:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/get_all_traffic_improvement_training_pipeline
+        auth:
+            type: OIDC

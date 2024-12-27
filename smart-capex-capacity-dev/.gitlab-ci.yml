@@ -1,0 +1,27 @@
+image: python:3.9
+
+before_script:
+  - python --version
+  - pip install -r requirements.txt
+
+stages:
+  - .pre
+  - Test
+  - .post
+
+first_job:
+  stage: .pre
+  script:
+    - echo "This is the beginning of the pipline"
+
+test_coverage_pipeline:
+  stage: Test
+  script:
+    - python -m unittest src/d03_capacity/tests/test_capacity_pipeline.py
+
+last_job:
+  stage: .post
+  needs: [test_capacity_pipeline]
+  script:
+    - echo "Tests are passed on $CI_COMMIT_BRANCH:) ! "
+

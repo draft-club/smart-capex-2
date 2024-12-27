@@ -1,0 +1,14 @@
+[MASTER]
+; The below warnings are disabled as they considered normal behaviour in Kubeflow
+;; - import-outside-toplevel: shows up when the packages are being imported inside vertex component function
+;; - no-value-for-parameter: shows up when the Output[Dataset] parameters are not passed to the component function calls 
+;;                              in pipeline flow instantiation function
+disable=missing-module-docstring,no-value-for-parameter,import-outside-toplevel
+
+[DESIGN]
+max-locals=30
+max-args=20
+max-statements=52
+
+[FORMAT]
+max-line-length=125

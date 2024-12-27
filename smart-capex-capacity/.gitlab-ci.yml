@@ -1,0 +1,90 @@
+include:
+  # Python template
+  - project: "to-be-continuous/python"
+    file: "templates/gitlab-ci-python.yml"
+
+image: docker:latest
+
+variables:
+  GCP_SERVICE_ACCOUNT: "sa-oro-data-cicd-capex-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+  GCP_WORKLOAD_IDENTITY_PROVIDER: "projects/934643879169/locations/global/workloadIdentityPools/orange-pool/providers/gitlab-tech-orange"
+  REGION: "europe-west3"
+  PROJECT: "oro-smart-capex-001-dev"
+  PYLINT_ENABLED: "true"
+
+stages:
+  - build
+  - test
+  - package-build
+  - package-test
+  - deploy
+  - acceptance
+  - publish
+  - production
+
+before_script:
+  - chmod +x ./sh_docker_build.sh  
+  - chmod +x ./sh_push_artifactory.sh
+
+py-lint:
+  stage: build
+  script:
+    - mkdir -p ./reports
+    - pip install pylint
+    - echo "Running pylint..."
+    - pylint your_package_or_module > ./reports/py-lint.txt --output-format=json || true
+    - pylint your_package_or_module --output-format=json > ./reports/py-lint.codeclimate.json || true
+    - echo "Pylint output in text format:"
+    - cat ./reports/py-lint.txt
+    - echo "Pylint output in codeclimate format:"
+    - cat ./reports/py-lint.codeclimate.json || echo "No codeclimate output generated."
+  after_script:
+    - echo "WORKING"
+  artifacts:
+    paths:
+      - ./reports/py-lint.txt
+      - ./reports/py-lint.codeclimate.json
+    expire_in: 1 day
+  variables:
+    CI_DEBUG_TRACE: "false"
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: always
+
+py-compile:
+  stage: build
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: never
+
+py-sbom:
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: never
+py-trivy:
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: never
+
+deploy-dev:
+  image: google/cloud-sdk:slim
+  stage: deploy
+  variables:
+    CLOUDSDK_CONFIG: $CI_PROJECT_DIR/gcloud
+  script:
+    - gcloud config set project $PROJECT
+    - echo ${CI_JOB_JWT_V2} > .ci_job_jwt_file
+    - gcloud iam workload-identity-pools create-cred-config ${GCP_WORKLOAD_IDENTITY_PROVIDER}
+      --service-account="${GCP_SERVICE_ACCOUNT}"
+      --output-file=.gcp_temp_cred.json
+      --credential-source-file=.ci_job_jwt_file
+    - gcloud auth login --cred-file=.gcp_temp_cred.json
+    - gcloud auth list
+    - gcloud iam service-accounts list
+    - gcloud builds submit --config=cloudbuild.yaml --region=europe-west3 --default-buckets-behavior=regional-user-owned-bucket
+  artifacts:
+    paths:
+      - .ci_job_jwt_file
+      - .gcp_temp_cred.json
+      - gcloud/config.json
+    expire_in: 1 day

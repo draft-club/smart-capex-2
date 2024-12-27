@@ -1,0 +1,7 @@
+google-cloud-logging
+google-cloud-aiplatform
+google-cloud-bigquery
+pandas
+pyarrow
+scikit-learn
+kfp

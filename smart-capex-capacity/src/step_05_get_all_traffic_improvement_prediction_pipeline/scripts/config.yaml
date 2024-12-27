@@ -1,0 +1,31 @@
+display_name: "get-all-traffic-improvement-prediction-pipeline"
+pipeline_root: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/notebook_vertex_ai"
+package_path: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/templates/get-all-traffic-improvement-prediction-pipeline.json"
+project_id: "oro-smart-capex-001-dev"
+location: "europe-west3"
+service_account: "sa-oro-smart-capex-compute-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+base_image: "europe-west3-docker.pkg.dev/oro-smart-capex-001-dev/smart-capex-capacity/smartcapex-pipeline/smart-capex-capacity-pipeline-image:0.3.0"
+
+traffic_weekly_kpis_table_id: "oro-smart-capex-001-dev.intermediate_results.traffic_forecasting_predicted_traffic_kpis_t"
+
+list_of_upgrades_table_id: "oro-smart-capex-001-dev.intermediate_results.process_bands_to_upgrade_cluster_future_upgrades_t"
+sites_to_remove_table_id: "oro-smart-capex-001-dev.intermediate_results.preprocess_technical_sites_to_remove_t"
+cell_affected_table_id: "oro-smart-capex-001-dev.intermediate_results.process_bands_to_upgrade_affected_cells_t"
+
+data_traffic_features_table_id: "oro-smart-capex-001-dev.intermediate_results.get_all_traffic_improvement_data_traffic_features_for_prediction_t"
+voice_traffic_features_table_id: "oro-smart-capex-001-dev.intermediate_results.get_all_traffic_improvement_voice_traffic_features_for_prediction_t"
+
+
+TRAFFIC_IMPROVEMENT:
+  MAX_NUMBER_OF_NEIGHBORS: 0
+  WEEKS_TO_WAIT_AFTER_UPGRADE: 8
+  WEEKS_TO_WAIT_AFTER_UPGRADE_MAX: 12
+  
+  BANDS_TO_CONSIDER:
+    - U900
+    - U2100
+    - L800
+    - L1800
+    - L2600
+    
+  compute_target: False

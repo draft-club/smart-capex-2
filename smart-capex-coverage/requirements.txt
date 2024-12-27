@@ -1,0 +1,14 @@
+numpy==1.22.2
+pandas==1.4.1
+matplotlib==3.5.1
+matplotlib-inline==0.1.3
+requests==2.27.1
+scipy==1.8.0ppo
+seaborn==0.11.2
+urllib3==1.26.8
+Shapely==1.8.0
+pyproj==3.3.0
+Rtree==0.9.7
+gmaps==0.9.0
+IPython==8.0.1
+ipywidgets==7.6.5

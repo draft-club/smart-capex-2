@@ -1,0 +1,101 @@
+# included templates
+
+include:
+
+  # Python template
+  - project: "to-be-continuous/python"
+    file: "templates/gitlab-ci-python.yml"
+    # SonarQube template
+  - project: "to-be-continuous/sonar"
+    ref: "3.1.0"
+    file: "templates/gitlab-ci-sonar.yml"
+  # Docker
+  - project: "to-be-continuous/docker"
+    file: '/templates/gitlab-ci-docker.yml'
+  # Sphinx
+  - project: 'to-be-continuous/sphinx'
+    ref: '1.1.0'
+    file: '/templates/gitlab-ci-sphinx.yml'
+
+
+variables:
+  # Python
+  PYTHON_IMAGE: python:3.9
+  PYLINT_ENABLED: "true"
+  UNITTEST_ENABLED: "false"
+  PYTEST_ENABLED: "true"
+  # Sphinx
+  SPHINX_SOURCE_DIR: "src/d08_docs/source"
+  SPHINX_BUILD_DIR: "src/d08_docs/build"
+  SPHINX_REQUIREMENTS_FILE: "requirements_sphinx.txt"
+  # Sonar
+  SONAR_HOST_URL: "https://sqaas.dos.tech.orange"
+  # Docker
+  DOCKER_SNAPSHOT_IMAGE: "$CI_REGISTRY_IMAGE/test:$CI_COMMIT_REF_SLUG"
+  DOCKER_RELEASE_IMAGE: "$CI_REGISTRY_IMAGE/:$CI_COMMIT_REF_NAME/v0"
+
+# your pipeline stages
+stages:
+  - build
+  - test
+  - package-build
+  - package-test
+  - deploy
+  - acceptance
+  - publish
+  - production
+
+
+
+pages:
+  stage: deploy
+  image: python:3.6-alpine
+  script:
+    - echo " Installation of sphinx"
+    - python3 -m pip install sphinx sphinx-rtd-theme
+    - echo "Move technical documentation to public folder"
+    - echo "$PWD"
+    - if [ -d "src/d08_docs/build/html/" ]; then mv src/d08_docs/build/html/ public/; else echo "HTtml pages are not build"; fi
+
+  artifacts:
+    paths:
+      - public
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: always
+
+# Permet de surcharger le template pour toujours lancer les tests
+py-pytest:
+  stage: build
+  after_script:
+    - pip list
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: always
+
+# Permet de surcharger le template pour toujours lancer Pylint
+py-lint:
+  stage: build
+  after_script:
+    - echo "WORKING"
+  variables:
+    CI_DEBUG_TRACE: "false"
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: always
+
+docker-kaniko-build:
+  stage: build
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: never
+
+sonar:
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: always
+
+#sphinx-build:
+#  before_script:
+#    - pip install --upgrade prophet

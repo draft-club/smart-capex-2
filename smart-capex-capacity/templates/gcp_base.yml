@@ -1,0 +1,101 @@
+# shell functions
+variables:
+  GCP_SERVICE_ACCOUNT: "sa-oro-data-cicd-capex-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+  GCP_WORKLOAD_IDENTITY_PROVIDER_ORO: "projects/934643879169/locations/global/workloadIdentityPools/orange-pool/providers/gitlab-tech-orange"
+  REGION: "europe-west3"
+  PROJECT: "oro-smart-capex-001-dev"
+  GCP_PROJECT_NAME: "oro-smart-capex-001-dev"
+  
+.shell-scripts: &shell-scripts |
+  # BEGSCRIPT
+  set -e
+
+  function log_info() {
+      echo -e "[\\e[1;94mINFO\\e[0m] $*"
+  }
+
+  function log_warn() {
+      echo -e "[\\e[1;93mWARN\\e[0m] $*"
+  }
+
+  function log_error() {
+      echo -e "[\\e[1;91mERROR\\e[0m] $*"
+  }
+
+  # print GCP shell variables
+  function print_gcp_env {
+    echo "*******************************************"
+    echo "*******************************************"
+    echo "GCP_REGION: $GCP_REGION"
+    echo "GCP_PROJECT_NAME: $GCP_PROJECT_NAME"
+    echo "GCP_PROJECT_NUMBER: $GCP_PROJECT_NUMBER"
+    echo "GCP_PROVIDER_ID: $GCP_PROVIDER_ID"
+    echo "GCP_WORKLOAD_IDENTITY_PROVIDER: $GCP_WORKLOAD_IDENTITY_PROVIDER"
+    echo "GCP_SERVICE_ACCOUNT: $GCP_SERVICE_ACCOUNT"
+    echo "CI_COMMIT_REF_NAME: $CI_COMMIT_REF_NAME"
+    echo "CI_COMMIT_REF_PROTECTED: $CI_COMMIT_REF_PROTECTED"
+    echo "CI_MERGE_REQUEST_TARGET_BRANCH_NAME: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
+    echo "CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED: $CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED"
+     echo "GCP_POOL_ID: $GCP_POOL_ID"
+    echo "*******************************************"
+    echo "*******************************************"
+  }
+
+.gcp-base:
+  before_script:
+    - |
+      echo "before script"
+      if [[ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" == "main" ]] || [[ "$CI_COMMIT_REF_NAME" == "main" && "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" == "" ]]
+      then
+        export GCP_ENV="dev"
+        export GCP_PROJECT_NAME="$GCP_PROJECT_NAME_DEV"
+        export GCP_PROJECT_NUMBER="$GCP_PROJECT_NUMBER_DEV"
+        export GCP_SERVICE_ACCOUNT="$GCP_SERVICE_ACCOUNT_DEV"
+      elif [[ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" == "staging" ]] || [[ "$CI_COMMIT_REF_NAME" == "staging" && "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" == "" ]]
+      then
+        export GCP_ENV="ppr"
+        export GCP_PROJECT_NAME="$GCP_PROJECT_NAME_PPR"
+        export GCP_PROJECT_NUMBER="$GCP_PROJECT_NUMBER_PPR"
+        export GCP_SERVICE_ACCOUNT="$GCP_SERVICE_ACCOUNT_PPR"
+      elif [[ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" == "main" ]] || [[ "$CI_COMMIT_REF_NAME" == "main" && "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" == "" ]]
+      then
+        export GCP_ENV="prd"
+        export GCP_PROJECT_NAME="$GCP_PROJECT_NAME_PRD"
+        export GCP_PROJECT_NUMBER="$GCP_PROJECT_NUMBER_PRD"
+        export GCP_SERVICE_ACCOUNT="$GCP_SERVICE_ACCOUNT_PRD"
+      fi 
+    - export GCP_ARTIFACT_REGISTRY_PYTHON="$(echo ${COUNTRY}-${WORKLOAD}-${PYTHON_ARTIFACT_REGISTRY_PURPOSE}-${GCP_ENV} | tr _ -)"
+    - export GCP_ARTIFACT_REGISTRY_DOCKER="$(echo ${COUNTRY}-${WORKLOAD}-${DOCKER_ARTIFACT_REGISTRY_PURPOSE}-${GCP_ENV} | tr _ -)" 
+    - export GCP_REGION="$GCP_REGION"
+    - export GCP_WORKLOAD_IDENTITY_PROVIDER=projects/${GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${GCP_POOL_ID}/providers/${GCP_PROVIDER_ID}
+    - *shell-scripts
+    - print_gcp_env
+
+stages:
+  - gcp_auth
+
+gcp-auth:
+  image: google/cloud-sdk:slim
+  extends: .gcp-base
+  stage: gcp_auth
+  script:
+    #- gcloud config set project $GCP_PROJECT_NAME
+    - gcloud config set project $PROJECT 
+    - echo ${CI_JOB_JWT_V2} > .ci_job_jwt_file
+    - gcloud iam workload-identity-pools create-cred-config ${GCP_WORKLOAD_IDENTITY_PROVIDER_ORO}
+      --service-account="${GCP_SERVICE_ACCOUNT}"
+      --output-file=.gcp_temp_cred.json
+      --credential-source-file=.ci_job_jwt_file
+    - gcloud auth login --cred-file=.gcp_temp_cred.json
+    - gcloud auth print-access-token > .access_token
+  artifacts:
+    paths:
+      #- /builds/Smart Capex/ORO/smart-capex-capacity/.ci_job_jwt_file
+      #- /builds/Smart Capex/ORO/smart-capex-capacity/.gcp_temp_cred.json
+      #- /builds/Smart Capex/ORO/smart-capex-capacity/.access_token
+      - .ci_job_jwt_file
+      - .gcp_temp_cred.json
+      - .access_token
+    expire_in: 1 hrs
+
+

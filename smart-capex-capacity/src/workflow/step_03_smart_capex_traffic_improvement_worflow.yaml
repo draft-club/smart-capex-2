@@ -1,0 +1,36 @@
+- get_all_traffic_improvement_prediction_pipeline:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/get_all_traffic_improvement_prediction_pipeline
+        auth:
+            type: OIDC
+        timeout: 1800
+- train_technical_pipeline_request:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/train_technical_pipeline
+        auth:
+            type: OIDC
+        timeout: 1800
+- process_traffic_improvement_request:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/process_traffic_improvement_pipeline
+        auth:
+            type: OIDC
+        timeout: 1800
+
+- capacity_technical_to_economical_pipeline_request:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/capacity_technical_to_economical_pipeline
+        auth:
+            type: OIDC
+        timeout: 600
+- process_capacity_economical_pipeline_request:
+    call: http.post
+    args:
+        url: https://europe-west3-oro-smart-capex-001-dev.cloudfunctions.net/capacity_economical_pipeline
+        auth:
+            type: OIDC
+        timeout: 600

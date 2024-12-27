@@ -1,0 +1,10 @@
+steps:
+# Connecting to the service account + Installing project dependencies + running the tests
+- name: 'gcr.io/cloud-builders/docker'
+  #env:
+  #    - 'GOOGLE_APPLICATION_CREDENTIALS=key.json'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      ./sh_docker_build.sh && ./sh_push_artifactory.sh

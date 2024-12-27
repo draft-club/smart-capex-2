@@ -1,0 +1,40 @@
+image: docker:latest
+variables:
+  GCP_SERVICE_ACCOUNT: "sa-oro-data-cicd-capex-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+  GCP_WORKLOAD_IDENTITY_PROVIDER: "projects/934643879169/locations/global/workloadIdentityPools/orange-pool/providers/gitlab-tech-orange"
+  REGION: "europe-west3"
+  PROJECT: "oro-smart-capex-001-dev"
+ 
+stages:
+ - deploy
+
+
+
+before_script:
+  #- apk update  
+  - chmod +x ./sh_docker_build.sh  
+  - chmod +x ./sh_push_artifactory.sh
+
+deploy-dev:
+  image: google/cloud-sdk:slim
+  stage: deploy
+  variables:
+    CLOUDSDK_CONFIG: $CI_PROJECT_DIR/gcloud
+  script:
+    - gcloud config set project $PROJECT
+    - echo ${CI_JOB_JWT_V2} > .ci_job_jwt_file
+    - gcloud iam workload-identity-pools create-cred-config ${GCP_WORKLOAD_IDENTITY_PROVIDER}
+      --service-account="${GCP_SERVICE_ACCOUNT}"
+      --output-file=.gcp_temp_cred.json
+      --credential-source-file=.ci_job_jwt_file
+    - gcloud auth login --cred-file=.gcp_temp_cred.json
+    - gcloud auth list
+    #- gcloud iam service-accounts list
+    - gcloud builds submit --config=cloudbuild.yaml --region=europe-west3 --default-buckets-behavior=regional-user-owned-bucket #--gcs-log-dir=gs://oro-smart-capex-config-001-dev/test_data #--no-source #--impersonate-service-account=$GCP_SERVICE_ACCOUNT
+
+  artifacts:
+    paths:
+    - .ci_job_jwt_file
+    - .gcp_temp_cred.json
+    - gcloud/config.json
+    expire_in: 1 day

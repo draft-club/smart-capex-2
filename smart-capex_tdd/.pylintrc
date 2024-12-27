@@ -1,0 +1,16 @@
+[MASTER]
+
+disable=missing-docstring
+ignore-patterns=src/d10_experimental/paul_code.py
+ignore=src/d10_experimental/paul_code.py
+
+ignore-paths=^src/d09_RED/.*$,
+             ^src/d08_docs/.*$,
+             ^src/tests/.*$,
+             ^src/d02_preprocessing/tests/.*$,
+             ^tests/.*$
+
+[DESIGN]
+max-locals=30
+max-args=20
+max-statements=52

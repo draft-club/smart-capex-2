@@ -1,0 +1,11 @@
+project_id: "oro-smart-capex-001-dev"
+location: "europe-west3"
+pipeline_root: "gs://oro-smart-capex-state-iac-934643879169-dev/oro-smart-capex-001-dev/notebook_vertex_ai"
+package_path: "train-churn-model.json"
+display_name: "train_churn_model"
+service_account : "sa-oro-smart-capex-compute-dev@oro-smart-capex-001-dev.iam.gserviceaccount.com"
+
+dataset_train_table_id: "oro-smart-capex-001-dev.intermediate_results.churn_technical_pipeline_train_dataset_t"
+m0: 5
+nb_train_samples_per_class: 5000
+nb_test_samples_per_class: 1000

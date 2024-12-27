@@ -1,0 +1,23 @@
+**/.ipynb_checkpoints/
+.DS_Store
+Zone.sav
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**/__pycache__/*
+**/__pycache__/
+
+# Jupyter Notebook
+**/.ipynb_checkpoints/*
+**/.ipynb_checkpoints/
+.ipynb_checkpoints
+
+smart_capex/experiments/.ipynb_checkpoints/forecast_visualization-checkpoint.ipynb
+smart_capex/preprocessing/resources/.ipynb_checkpoints/preprocessing_oss_counter_2G_weekly-checkpoint.sql
+smart_capex/preprocessing/resources/.ipynb_checkpoints/preprocessing_oss_counter_3G_weekly-checkpoint.sql
+smart_capex/preprocessing/resources/.ipynb_checkpoints/preprocessing_oss_counter_4G_weekly-checkpoint.sql
+smart_capex/preprocessing/resources/.ipynb_checkpoints/preprocessing_oss_counter_weekly-checkpoint.sql
+smart_capex/preprocessing/resources/.ipynb_checkpoints/create_oss_forecast_model-checkpoint.sql
+smart_capex/preprocessing/resources/.ipynb_checkpoints/run_oss_forecast-checkpoint.sql
+smart_capex/preprocessing/resources/.ipynb_checkpoints/run_oss_forecast-checkpoint.sql
+smart_capex/experiments/__pycache__
+smartcapex-pipeline.json

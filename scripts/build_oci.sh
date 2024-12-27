@@ -1,0 +1,1 @@
+docker build -t ocidv --build-arg country="oci"  .

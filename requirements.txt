@@ -1,0 +1,13 @@
+Flask==2.0.2
+PyMySQL==1.0.2
+sklearn==0.0
+SQLAlchemy==1.4.31
+mock==2.0.0
+pytest-mock==3.6.1
+pandas==1.4.2
+cryptography==39.0.2
+google-cloud-storage
+google-cloud-bigquery
+db-dtypes
+Werkzeug==2.2.2
+numpy==1.22.1
